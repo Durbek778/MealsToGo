@@ -34,7 +34,6 @@ export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
       <Text center variant="caption" numberOfLines={3}>
         {restaurant.name}
       </Text>
-      <Text>durbek</Text>
     </Item>
   );
 };
