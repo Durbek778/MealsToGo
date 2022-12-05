@@ -1,5 +1,5 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import * as firebase from "firebase";
 
@@ -12,18 +12,15 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { theme } from "./src/infrastructure/theme";
 import { Navigation } from "./src/infrastructure/navigation";
 
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
-import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB8k-KL6sWy_JVLfLemTxwtye1dYSO3BHs",
-  authDomain: "mealstogo-dd162.firebaseapp.com",
-  projectId: "mealstogo-dd162",
-  storageBucket: "mealstogo-dd162.appspot.com",
-  messagingSenderId: "119348864872",
-  appId: "1:119348864872:web:a2dbe59d7b2d2bf36158dd",
+  apiKey: "AIzaSyBmKwzXIQ_7iufDh4U6GyU_4Wc-hyDEnf8",
+  authDomain: "mealstogo-b2612.firebaseapp.com",
+  projectId: "mealstogo-b2612",
+  storageBucket: "mealstogo-b2612.appspot.com",
+  messagingSenderId: "158582890553",
+  appId: "1:158582890553:web:2ef50439fcd80f2ede2de8",
 };
 
 if (!firebase.apps.length) {
@@ -47,13 +44,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
-          <FavouritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <Navigation />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavouritesContextProvider>
+          <Navigation />
         </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
